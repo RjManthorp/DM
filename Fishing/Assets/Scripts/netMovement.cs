@@ -10,16 +10,26 @@ public class netMovement : MonoBehaviour {
 	private Quaternion startPos;
 	public bool net1Clicked;
 
-	void Start()
+//	void Start()
+//	{
+//		startPos = transform.rotation;
+//	}
+
+	IEnumerator start()
 	{
-		startPos = transform.rotation;
+			StartCoroutine("swingNet",2.0f);
+			yield return new WaitForSeconds (1);
+			StopCoroutine ("swingNet");
 	}
-	void Update()
+
+	IEnumerator swingNet(float waitTime)
 	{
-		if (net1Clicked == true) {
+		while (true) 
+		{
 			Quaternion a = startPos;
 			a.z += direction * (delta * Mathf.Sin (Time.time * speed));
 			transform.rotation = a;
+			yield return null;
 		}
 	}
 

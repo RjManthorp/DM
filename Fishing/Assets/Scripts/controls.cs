@@ -6,8 +6,13 @@ public class controls : MonoBehaviour {
 
 	public Button catch1;
 	public Button catch2;
+	public Button catch1_A;
+	public Button catch2_A;
 
 	public GameObject net1;
+
+
+
 	public bool onNet;
 
 
@@ -16,19 +21,33 @@ public class controls : MonoBehaviour {
 	{
 		Button btn1 = catch1.GetComponent<Button>();
 		Button btn2 = catch2.GetComponent<Button>();
+		Button btn1A = catch1_A.GetComponent<Button>();
+		Button btn2A = catch2_A.GetComponent<Button>();
 		btn1.onClick.AddListener(click1);
 		btn2.onClick.AddListener(click2);
+		btn1A.onClick.AddListener(click1_A);
+		btn2A.onClick.AddListener(click2_A);
 	}
 	
 	void click1()
 	{
 		Debug.Log ("click1");
-
+		net1.gameObject.GetComponent<netMovement> ().StartCoroutine ("swingNet",2.0f);
 	}
 
 	void click2()
 	{
 		Debug.Log ("click2");
+	}
+
+	void click1_A()
+	{
+		Debug.Log ("click1A");
+	}
+
+	void click2_A()
+	{
+		Debug.Log ("click2A");
 	}
 
 	void Update () 

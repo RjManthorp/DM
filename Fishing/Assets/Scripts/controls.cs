@@ -10,8 +10,9 @@ public class controls : MonoBehaviour {
 	public Button catch2_A;
 
 	public GameObject net1;
+	public GameObject net2;
 
-
+	private Animator anim; 
 
 	public bool onNet;
 
@@ -27,17 +28,23 @@ public class controls : MonoBehaviour {
 		btn2.onClick.AddListener(click2);
 		btn1A.onClick.AddListener(click1_A);
 		btn2A.onClick.AddListener(click2_A);
+
+		anim = GetComponent<Animator> (); 
+
+		onNet = true;
 	}
 	
 	void click1()
 	{
 		Debug.Log ("click1");
-		net1.gameObject.GetComponent<netMovement> ().StartCoroutine ("swingNet",2.0f);
+		net1.gameObject.GetComponent<Animator> ().SetBool("isSwinging", true );
+
 	}
 
 	void click2()
 	{
 		Debug.Log ("click2");
+		net2.gameObject.GetComponent<Animator> ().SetBool("isSwinging", true );
 	}
 
 	void click1_A()

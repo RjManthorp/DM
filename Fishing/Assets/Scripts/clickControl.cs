@@ -4,27 +4,24 @@ using UnityEngine;
 
 public class clickControl : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () 
+	void Update() 
 	{
-		if (Input.GetMouseButtonDown (0)) 
+		if (Input.GetMouseButtonDown(0)) 
 		{
-			Vector3 mousePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			Vector2 mousePos2D = new Vector2 (mousePos.x, mousePos.y);
-			Debug.Log (mousePos.x);
+			Debug.Log("Pressed left click, casting ray.");
+			CastRay();
+		}
+	}
 
-			RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-			if (hit.collider != null) 
-			{
-				Debug.Log (hit.collider.gameObject.name);
-				hit.collider.attachedRigidbody.AddForce (Vector2.up);
-				
-			}
+	void CastRay() 
+	{
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		RaycastHit hit;
+		if (Physics.Raycast(ray, out hit, 100)) 
+		{
+			Debug.DrawLine(ray.origin, hit.point);
+			Debug.Log (hit.collider.gameObject.name);
+			hit.collider.gameObject.transform.position = new Vector3 (-0.56f, -4.69f, -1f);
 		}
 	}
 }

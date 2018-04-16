@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - fish
+  - p1Boat
+  - p2Boat
+  - basicFish
+  - rareFish
+  - Blue Fish 1
+  - Blue Fish 2
+  - Pink Fish 1
+  - Pink Fish 2
   layers:
   - Default
   - TransparentFX

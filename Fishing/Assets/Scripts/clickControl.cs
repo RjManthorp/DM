@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class clickControl : MonoBehaviour {
 
+	public bool p1firstFish;
+	public bool p2firstFish;
+
+
+	void Start()
+	{
+		//firstFish = true;
+	}
+
 	void Update() 
 	{
 		if (Input.GetMouseButtonDown(0)) 
@@ -19,9 +28,33 @@ public class clickControl : MonoBehaviour {
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit, 100)) 
 		{
-			Debug.DrawLine(ray.origin, hit.point);
-			Debug.Log (hit.collider.gameObject.name);
-			hit.collider.gameObject.transform.position = new Vector3 (-0.56f, -4.69f, -1f);
+			if (hit.collider.gameObject.GetComponent<Transform> ().position.y <= 0.0f && p1firstFish == false) 
+			{
+				hit.collider.gameObject.transform.position = new Vector3 (-2.36f, -4.69f, -1f);
+				hit.collider.gameObject.gameObject.GetComponent<fishMovement> ().speed = 0.0F;
+				p1firstFish = true;
+			}
+			else if (hit.collider.gameObject.GetComponent<Transform> ().position.y <= 0.0f && p1firstFish == true) 
+			{
+				hit.collider.gameObject.transform.position = new Vector3 (-0.62f, -4.69f, -1f);
+				hit.collider.gameObject.gameObject.GetComponent<fishMovement> ().speed = 0.0F;
+			}
+			if (hit.collider.gameObject.GetComponent<Transform> ().position.y >= 0.0f && p2firstFish == false)  
+			{
+				hit.collider.gameObject.transform.position = new Vector3 (1.26f, 4.69f, -1f);
+				hit.collider.gameObject.gameObject.GetComponent<fishMovement> ().speed = 0.0F;
+				p2firstFish = true;
+			}
+			else if (hit.collider.gameObject.GetComponent<Transform> ().position.y >= 0.0f && p2firstFish == true)  
+			{
+				hit.collider.gameObject.transform.position = new Vector3 (-0.62f, 4.69f, -1f);
+				hit.collider.gameObject.gameObject.GetComponent<fishMovement> ().speed = 0.0F;
+				p2firstFish = true;
+			}
 		}
 	}
+
+
+
+
 }

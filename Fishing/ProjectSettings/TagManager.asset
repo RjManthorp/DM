@@ -13,6 +13,9 @@ TagManager:
   - Blue Fish 2
   - Pink Fish 1
   - Pink Fish 2
+  - caughtFish
+  - Orange Fish 1
+  - Orange Fish 2
   layers:
   - Default
   - TransparentFX

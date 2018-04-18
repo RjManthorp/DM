@@ -2,20 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class scoreCounter : MonoBehaviour {
+
+public class scoreCountP2 : MonoBehaviour {
 
 
-public int p1Score;
-public Text playerOneScore;
-
-public int fishCount1;
+	public int p2Score;
 
 
+	public int fishCount2;
 
 
-
-
-public List<GameObject> caughtFishP1 = new List<GameObject> ();
+	public List<GameObject> caughtFishP2 = new List<GameObject> ();
 
 
 	void Start()
@@ -26,59 +23,57 @@ public List<GameObject> caughtFishP1 = new List<GameObject> ();
 	void Update()
 	{
 
-		
-		if (fishCount1 == 2) 
+		if (fishCount2 == 2) 
 		{
 			checkFish1 ();
 		}
-		playerOneScore.text = p1Score.ToString ();
 	}
 
 	void checkFish1()
 	{
-		
-		for (int i = 0; i < caughtFishP1.Count; i++) 
+
+		for (int i = 0; i < caughtFishP2.Count; i++) 
 		{
-			if (caughtFishP1 [0].name.Contains ("Blue") && caughtFishP1 [1].name.Contains ("Blue")) {
+			if (caughtFishP2 [0].name.Contains ("Blue") && caughtFishP2 [1].name.Contains ("Blue")) {
 				Debug.Log ("Its a match!");
-				p1Score += 10;
+				p2Score += 10;
 			} 
 
-			if (caughtFishP1 [0].name.Contains ("Pink") && caughtFishP1 [1].name.Contains ("Pink")) {
+			if (caughtFishP2 [0].name.Contains ("Pink") && caughtFishP2 [1].name.Contains ("Pink")) {
 				Debug.Log ("Its a match!");
-				p1Score += 10;
+				p2Score += 10;
 
 			} 
-			if (caughtFishP1 [0].name.Contains ("Orange") && caughtFishP1 [1].name.Contains ("Orange"))
+			if (caughtFishP2 [0].name.Contains ("Orange") && caughtFishP2 [1].name.Contains ("Orange"))
 			{
 				Debug.Log ("Its a match!");
-				p1Score += 10;
+				p2Score += 10;
 
 			}
 
 			else {
 				Debug.Log ("no match");
 			}
-	
-			caughtFishP1.Clear ();
-				
+
+			caughtFishP2.Clear ();
+
 			removeCaughtFish ();
 		}
 	}
 
 
 
-public void OnTriggerEnter(Collider col)
+	public void OnTriggerEnter(Collider col)
 	{
 		if (col.gameObject.GetComponent<fishMovement> ().p2Zone == false) {
 			col.gameObject.tag = "caughtFish";
 
-			caughtFishP1.Add (col.gameObject);
+			caughtFishP2.Add (col.gameObject);
 
-			fishCount1 += 1;
+			fishCount2 += 1;
 
 		} 
-}
+	}
 	void removeCaughtFish()
 	{
 		GameObject[] caughtFish = GameObject.FindGameObjectsWithTag ("caughtFish");
@@ -88,7 +83,7 @@ public void OnTriggerEnter(Collider col)
 		{
 			Destroy (caughtFish [i]);
 
-			fishCount1 = 0;
+			fishCount2 = 0;
 
 		}
 

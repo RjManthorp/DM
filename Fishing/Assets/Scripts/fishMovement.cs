@@ -21,7 +21,7 @@ public class fishMovement : MonoBehaviour
 
 	void PositionChange()
 	{
-		newPosition = new Vector2(Random.Range(-3.5f, 3.5f), Random.Range(-3.5f, 3.5f));
+		newPosition = new Vector2(Random.Range(-7.5f, 7.5f), Random.Range(-3.5f, 3.5f));
 	}
 
 	void Update ()

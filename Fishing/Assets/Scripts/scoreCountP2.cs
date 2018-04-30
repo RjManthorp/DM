@@ -8,7 +8,7 @@ public class scoreCountP2 : MonoBehaviour {
 
 	public int p2Score;
 
-
+	public Text playerTwoScore;
 	public int fishCount2;
 
 
@@ -22,7 +22,7 @@ public class scoreCountP2 : MonoBehaviour {
 
 	void Update()
 	{
-
+		playerTwoScore.text = p2Score.ToString ();
 		if (fishCount2 == 2) 
 		{
 			checkFish1 ();
@@ -65,7 +65,7 @@ public class scoreCountP2 : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider col)
 	{
-		if (col.gameObject.GetComponent<fishMovement> ().p2Zone == false) {
+		if (col.gameObject.GetComponent<fishMovement> ().p2Zone == true) {
 			col.gameObject.tag = "caughtFish";
 
 			caughtFishP2.Add (col.gameObject);

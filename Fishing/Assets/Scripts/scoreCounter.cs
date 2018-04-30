@@ -6,6 +6,7 @@ public class scoreCounter : MonoBehaviour {
 
 
 public int p1Score;
+//public int p2Score;
 public Text playerOneScore;
 
 public int fishCount1;
@@ -32,6 +33,16 @@ public List<GameObject> caughtFishP1 = new List<GameObject> ();
 			checkFish1 ();
 		}
 		playerOneScore.text = p1Score.ToString ();
+
+		for (int i = 0; i < caughtFishP1.Count; i++)
+		{
+			if (caughtFishP1 [i].gameObject.GetComponent<Transform> ().position.y >= 0) 
+			{
+				
+			}
+			
+		}
+
 	}
 
 	void checkFish1()

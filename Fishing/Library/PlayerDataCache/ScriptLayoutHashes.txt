@@ -1,11 +1,11 @@
-WebGL
+Android
 PlayerPath?
-C:/Users/ryanm/Documents/GitHub/DM/Fishing/webGL
+C:/Users/ryanm/Documents/GitHub/DM/Fishing/fishing.apk
 SceneListBegin?
 Assets/1.unity
 SceneListEnd?
 5138a32545c736817a2650ccb4f64092 Assembly-CSharp.dll:.scoreCounter
-5599b9e409066b8cc30d4020a9f1b915 Assembly-CSharp.dll:.fishMovement
+f793b2ca6e09da09f3cabdf0f7d7ed31 Assembly-CSharp.dll:.fishMovement
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 4b12dd839b2293f8457cd67cc3610b85 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -119,7 +119,7 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 3f02924330f20bce049ee35c27340166 Assembly-CSharp.dll:.clickControl
-edbcba91d95f2b9f96bd0c9c81f0947b Assembly-CSharp.dll:.timer
+ed836e2276e5d0a306579ad41be9798b Assembly-CSharp.dll:.timer
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator

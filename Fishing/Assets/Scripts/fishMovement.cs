@@ -11,6 +11,10 @@ public class fishMovement : MonoBehaviour
 	public bool isMoving;
 	public bool p2Zone;
 
+	public bool endOfGame;
+
+	public GameObject clock;
+
 	Vector2 newPosition;
 
 	void Start ()
@@ -21,7 +25,7 @@ public class fishMovement : MonoBehaviour
 
 	void PositionChange()
 	{
-		newPosition = new Vector2(Random.Range(-4.5f, 4.5f), Random.Range(-3.5f, 3.5f));
+		newPosition = new Vector2(Random.Range(-4.5f, 4.5f), Random.Range(-4f, 4f));
 	}
 
 	void Update ()
@@ -43,7 +47,37 @@ public class fishMovement : MonoBehaviour
 		{
 			p2Zone = false;
 		}
+
+		if (endOfGame == true) 
+		{
+			endGame ();
+		}
+
+		if (gameObject.GetComponent<Transform> ().localScale.x <0.00f && gameObject.GetComponent<Transform> ().localScale.y <0.00 && gameObject.GetComponent<Transform> ().localScale.z <0.00) 
+		{
+			endOfGame = false;
+			Destroy (gameObject);
+		}
+
+		if (clock.GetComponent<timer>().gameOver == true) 
+		{
+			endGame ();
+		}
+
 	}
+
+
+	void endGame()
+	{
+		for (int i = 0; i < 99; i++) {
+			transform.localScale -= new Vector3 (0.00001f, 0.00001f, 0.00001f);
+		}
+
+
+
+
+	}
+
 
 	void LookAt2D(Vector3 lookAtPosition)
 	{

@@ -50,6 +50,18 @@ public class scoreCountP2 : MonoBehaviour {
 				p2Score += 10;
 
 			}
+			if (caughtFishP2 [0].name.Contains ("Green") && caughtFishP2 [1].name.Contains ("Green"))
+			{
+				Debug.Log ("Its a match!");
+				p2Score += 10;
+
+			}
+			if (caughtFishP2 [0].name.Contains ("Special") && caughtFishP2 [1].name.Contains ("Special"))
+			{
+				Debug.Log ("Its a match!");
+				p2Score += 50;
+
+			}
 
 			else {
 				Debug.Log ("no match");

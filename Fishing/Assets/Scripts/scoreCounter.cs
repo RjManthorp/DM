@@ -66,6 +66,18 @@ public List<GameObject> caughtFishP1 = new List<GameObject> ();
 				p1Score += 10;
 
 			}
+			if (caughtFishP1 [0].name.Contains ("Green") && caughtFishP1 [1].name.Contains ("Green"))
+			{
+				Debug.Log ("Its a match!");
+				p1Score += 10;
+
+			}
+			if (caughtFishP1 [0].name.Contains ("Special") && caughtFishP1 [1].name.Contains ("Special"))
+			{
+				Debug.Log ("Its a match!");
+				p1Score += 50;
+
+			}
 
 			else {
 				Debug.Log ("no match");
